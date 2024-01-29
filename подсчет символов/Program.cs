@@ -9,6 +9,8 @@ class Program
 
         int enUpperCaseCount = 0;
         int enLowerCaseCount = 0;
+        int ruUpperCaseCount = 0;
+        int ruLowerCaseCount = 0;
         int digitsCount = 0;
         int otherCount = 0;
 
@@ -18,16 +20,24 @@ class Program
             {
                 if (Char.IsUpper(c))
                 {
-                    if ((c >= 'A' && c <= 'Z'))
+                    if ((c >= 'A' && c <= 'Z') || (c >= 'А' && c <= 'Я'))
                     {
                         enUpperCaseCount++;
+                    }
+                    else
+                    {
+                        ruUpperCaseCount++;
                     }
                 }
                 else
                 {
-                    if ((c >= 'a' && c <= 'z') )
+                    if ((c >= 'a' && c <= 'z') || (c >= 'а' && c <= 'я'))
                     {
                         enLowerCaseCount++;
+                    }
+                    else
+                    {
+                        ruLowerCaseCount++;
                     }
                 }
             }
@@ -43,6 +53,8 @@ class Program
 
         Console.WriteLine("EnUpperCase: " + enUpperCaseCount);
         Console.WriteLine("EnLowerCase: " + enLowerCaseCount);
+        Console.WriteLine("RuUpperCase: " + ruUpperCaseCount);
+        Console.WriteLine("RuLowerCase: " + ruLowerCaseCount);
         Console.WriteLine("Digits: " + digitsCount);
         Console.WriteLine("Other: " + otherCount);
     }
